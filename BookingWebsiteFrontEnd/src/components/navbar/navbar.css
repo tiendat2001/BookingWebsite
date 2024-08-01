@@ -1,0 +1,88 @@
+.navbar{
+  height: 60px;
+  background-color: #003580;
+  display: flex;
+  justify-content: center;
+}
+.account h1{
+  color: rgb(255, 255, 255);
+  font-size:20px;
+}
+.account_options{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    z-index: 2;
+    position: absolute;
+    top: 50px;
+    background-color: white;
+    color: gray;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+    padding:10px;
+
+}
+
+.account_options a {
+  text-decoration: none; /* Loại bỏ gạch chân */
+  /* 
+  font-weight:bold;
+  border-bottom: 1px solid gray; /* Thêm đường kẻ ngang */
+  color:black;
+  cursor: pointer; 
+}
+.navContainer{
+  width: 100%;
+  max-width: 1024px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo{
+  width:100px;
+  margin-top:10px;
+}
+
+.logo_name{
+  color: #7451f8;
+
+}
+
+.navButton{
+ 
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(1, 148, 243);
+}
+
+.logout{
+  gap:20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navItems{
+  display:flex;
+  gap:10px;
+}
+
+
+/*   
+  .navContainer{
+    @apply w-full max-w-screen-lg text-white flex items-center justify-between
+  }
+  
+  .logo{
+    @apply font-medium text-lg;
+  }
+  
+  .navButton{
+    @apply ml-[20px] border-none cursor-pointer border-blue-900 py-[5px] px-[10px] text-lg;
+  } */

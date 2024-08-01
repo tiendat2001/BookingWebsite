@@ -1,0 +1,123 @@
+/* thanh search ngày */
+
+.RoomClientContainer_searchDates {
+    height: 40px;
+    background-color: white;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+    border-radius: 5px;
+    z-index: 1;
+    /* padding:10px 0px; */
+    position: relative;
+  }
+  
+  .RoomClientContainer_icon {
+    color: black;
+  }
+  
+  .headerSearchItemHotel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .headerSearchInputHotel {
+    border: none;
+    outline: none;
+  }
+
+.RoomClientContainer{
+    width: 100%;
+    max-width: 1024px;
+    margin-top:20px;
+
+}
+.RoomClientContainer .flex_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.RoomClientContainer .rMax{
+    font-size:14px;
+
+
+}
+
+.RoomClientContainer .rTitle{
+    font-weight: 500;
+}
+
+.RoomClientContainer .rDesc{
+    font-weight: 300;
+
+}
+
+.rSelectRooms{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 8px;
+    color: gray;
+  }
+
+  .rImages{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    gap:2px;
+  }
+
+  .rImgWrapper{
+    width:25%;
+  }
+  .roomImg{
+    width: 100%;
+    object-fit: cover;
+    cursor:pointer;
+    /* width:90px; */
+    height: 90px;
+
+  }
+
+  .rButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  /*  phần ảnh phóng to */
+  .expandedPhotoWrapper {
+    position: fixed; /* Đảm bảo ảnh phóng to được hiển thị trên cùng của trang */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Tạo một layer mờ phía sau ảnh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Đảm bảo ảnh phóng to hiển thị trên các phần tử khác */
+  }
+  
+  .expandedPhoto {
+    max-width: 90%; /* Đảm bảo ảnh không quá lớn trên màn hình */
+    max-height: 90%;
+    object-fit: contain; /* Đảm bảo ảnh không bị méo khi phóng to */
+    border-radius: 5px; /* Bo tròn các góc */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiển thị shadow cho ảnh */
+    cursor: pointer; /* Biến con trỏ thành dạng tay khi di chuột vào ảnh */
+  }

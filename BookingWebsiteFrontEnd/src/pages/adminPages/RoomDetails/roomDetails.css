@@ -1,0 +1,86 @@
+.detailsRoomTypeContainer{
+    width: 95%;
+    margin:30px auto;
+}
+.detailsRoomTypeContainer_modifyNumberRooms{
+   background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+.tableRoomStatus {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .grid-container {
+  width: 100%; /* Kích thước chiều rộng bằng với tableRoomStatus */
+  height: 100%; /* Kích thước chiều cao bằng với tableRoomStatus */
+  display: grid;
+  grid-template-columns: repeat(6, 16.5%); /* 6 cột với chiều rộng là 20% */
+  grid-template-rows: repeat(5, auto); /* 5 hàng với chiều cao là 100px */
+  }
+  .grid-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+   
+  }
+
+  /*  thanh search ngày */
+.closeRoomSearchBar {
+  height: 40px;
+  background-color: white;
+  border: 3px solid #febb02;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:5px;
+  border-radius: 5px;
+  z-index: 1;
+  /* padding:10px 0px; */
+  position: relative;
+}
+
+.closeRoomSearchBar .dateRange{
+    position: absolute;
+    top: 50px;
+    z-index: 2; 
+}
+
+.selectRoomClose{
+  display:flex;
+  justify-content: flex-start;
+  gap:30px;
+  width: 100%;
+  align-items: center;
+}
+
+/*  phần lịch sử đóng phòng */
+
+.roomCloseContainer{
+  /* margin-top:20px; */
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  border: 2px solid #8ed1f8; /* Màu xanh nước biển */
+  padding: 5px;
+}
+
+.roomClose{
+  text-align: center;
+  width:20%;
+}
+
+.closeRoomContainer_btn{
+  background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+  

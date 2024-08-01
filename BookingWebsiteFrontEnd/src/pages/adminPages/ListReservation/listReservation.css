@@ -1,0 +1,105 @@
+.ListReservationAdminContainer{
+    width:97%;
+    margin:auto;
+    position: relative;
+}
+.wrap-content {
+    white-space: normal !important;
+  }
+
+  .ListReservationAdminContainer_searchDates {
+    height: 40px;
+    background-color: white;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+    border-radius: 5px;
+    z-index: 1;
+    /* padding:10px 0px; */
+    position: relative;
+  }
+  
+  /* .RoomClientContainer_icon {
+    color: black;
+  } */
+
+  .requestCancelButton{
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: crimson;
+    border: 1px solid rgba(220, 20, 60, 0.6);
+    cursor: pointer;
+  }
+  .cellRequestCancel {
+    margin:auto;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+.cellRequestCancel .viewButton {
+   padding: 2px 5px;
+   border-radius: 5px;
+   color: darkblue;
+   border: 1px dotted rgba(0, 0, 139, 0.596);
+   cursor: pointer;
+}
+
+.modalCancelRequest{
+  position: fixed;
+  width: 40%;
+  height: 20%;
+  /*  3cái dưới đảm bảo để nó ở giữa */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white; /* Hoặc màu nền mong muốn */
+  padding: 20px; /* Khoảng đệm bên trong modal */
+  z-index: 1000; /* Đảm bảo modal luôn ở trên các phần tử khác */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px; /* Bo góc cho modal */
+  
+}
+
+.modalCancelRequest .modal-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
+}
+.modalCancelRequest_close{
+  position: absolute;
+  top:0px;
+  right:10px;
+  font-size: 30px;
+}
+.modalCancelRequest_title{
+  font-weight: bold;
+  font-size: 24px;
+
+}
+.modalCancelRequest_btn{
+  font-size: 14px;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.modalCancelRequest textarea{
+  width: 50%;
+}
+
+.ListReservationAdminContainer_filterBtn{
+  background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    /* border-radius: 5px; */
+    /* height: 100%; */
+    /* min-height: 50px; */
+}

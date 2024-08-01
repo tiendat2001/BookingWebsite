@@ -1,0 +1,74 @@
+
+.listHotelAdminContainer{
+  width:95%;
+  margin:auto;
+  font-size: 13px;
+ 
+}
+
+
+.listHotelAdmin{
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+  
+.listHotelAdmin  .siImg {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .listHotelAdmin  .siDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* flex: 2; */
+  }
+  
+  .listHotelAdmin .siTitle {
+    font-size: 20px;
+    color: #0071c2;
+  }
+  
+  .listHotelAdmin .siDistance {
+    font-size: 12px;
+  }
+
+   .listHotel_btn{
+    width:30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; 
+    gap:10px;
+  
+  }
+  .listHotel_btn button{
+    background-color: #0071c2 ;
+    color: white;
+    font-weight: bold;
+    padding:  5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 20%;
+    min-height: 50px;
+  }
+
+  .addHotel_btn{
+    background-color: #5bf800 !important;
+    color: white;
+    font-weight: bold;
+    padding:  5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 20%;
+    min-height: 40px;
+  }
+  
+  

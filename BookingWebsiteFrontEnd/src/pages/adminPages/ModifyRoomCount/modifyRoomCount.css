@@ -1,0 +1,40 @@
+.ModifyRoomCountContainer{
+    width: 95%;
+    margin:20px auto;
+}
+
+.roomNumberContainer{
+    /* margin-top:20px; */
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    border: 2px solid #8ed1f8; /* Màu xanh nước biển */
+    padding: 5px;
+}
+
+.roomNumber{
+    text-align: center;
+    width:20%;
+    font-weight: bold;
+}
+
+.modifyRoomCount{
+    display: flex;
+    justify-content: flex-start;
+    gap:20px;
+    width: 70%;
+    margin-bottom: 5px;
+}
+.modifyRoomCount_btn{
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+.modifyRoomCount input{
+    width: 40px;
+}
+.roomNumber_btn{
+    width: 100%!important;
+}

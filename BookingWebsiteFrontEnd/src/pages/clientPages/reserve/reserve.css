@@ -1,0 +1,49 @@
+.ReserveContainer{
+    width: 100%;
+    max-width: 1024px;
+    /* gap: 10px; */
+    /* position: relative; */
+    margin: 10px auto
+
+}
+
+.ReserveHotelContainer{
+    display:flex;
+    justify-content: space-between;
+    border: 2px solid #d5eefd; /* Màu xanh nước biển */
+    padding: 20px; /* Padding 20px */
+    margin-bottom: 10px;
+}
+.reserveImg{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    width:30%;
+}
+
+.ReserveDetailContainer{
+    border: 2px solid #d5eefd; /* Màu xanh nước biển */
+    margin-bottom: 10px;
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    font-size:17px;
+}
+
+.ReservePaymentContainer{
+    border: 2px solid #d5eefd; /* Màu xanh nước biển */
+    margin-bottom: 10px;
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    font-size:17px;
+}
+
+.label_paymentMethod{
+      border: 2px solid rgb(144, 211, 255);
+      background-color: rgba(252, 252, 224, 0.877);
+      padding:10px;
+}
+  

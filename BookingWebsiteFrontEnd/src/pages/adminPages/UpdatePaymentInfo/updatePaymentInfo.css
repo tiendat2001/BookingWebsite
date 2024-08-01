@@ -1,0 +1,25 @@
+.updatePaymentContainer{
+    margin:10px auto;
+    width:95%
+}
+
+.updatePaymentContainer_input{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.updatePaymentContainer_input input{
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ba9898;
+    border-radius: 10px;
+}
+
+.updatePaymentContainer_input button{
+    width: 420px;
+    height: 30px;
+    border: 1px solid #ba9898;
+    cursor: pointer;
+}

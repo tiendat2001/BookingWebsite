@@ -1,0 +1,26 @@
+.modifyUserContainer{
+    margin:10px auto;
+    width:95%
+}
+
+.modifyUserContainer_changePassword{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.modifyUserContainer_changePassword input{
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ba9898;
+    border-radius: 10px;
+}
+
+.modifyUserContainer_changePassword button{
+    width: 420px;
+    height: 30px;
+    border: 1px solid #ba9898;
+    border-radius: 10px;
+    cursor: pointer;
+}

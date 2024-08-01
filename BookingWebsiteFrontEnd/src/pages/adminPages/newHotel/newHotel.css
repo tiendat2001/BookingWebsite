@@ -1,0 +1,83 @@
+/* .listAdmin {
+    width: 100%;
+    display: flex;
+}
+.listAdmin .listContainerAdmin {
+    flex: 6;
+} */
+ .listAdmin .listContainerAdmin .bottom {
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+}
+
+.listAdmin .listContainerAdmin .top{
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 10px;
+    margin: 20px;
+    /* display: flex; */
+}
+.listAdmin .listContainerAdmin .top h1, .listAdmin .listContainerAdmin .bottom h1 {
+    /* color: lightgray; */
+    font-size: 20px;
+}
+.listAdmin .listContainerAdmin .top .left, .listAdmin .listContainerAdmin .bottom .left {
+    flex: 1;
+    text-align: center;
+}
+.listAdmin .listContainerAdmin .top .left img, .listAdmin .listContainerAdmin .bottom .left img {
+    width: 100px;
+    height: 100px;
+    /* border-radius: 50%; */
+    object-fit: cover;
+    margin-right:4px;
+}
+.listAdmin .listContainerAdmin .top .right, .listAdmin .listContainerAdmin .bottom .right {
+    flex: 2;
+    padding: 0px 20px;
+}
+.listAdmin .listContainerAdmin .top .right form, .listAdmin .listContainerAdmin .bottom .right form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* justify-content: space-between; */
+    flex-direction: column;
+}
+.listAdmin .listContainerAdmin .top .right form .selectRooms, .listAdmin .listContainerAdmin .bottom .right form .selectRooms {
+    width: 100%;
+}
+.listAdmin .listContainerAdmin .top .right form .selectRooms select, .listAdmin .listContainerAdmin .bottom .right form .selectRooms select {
+    width: 100%;
+    padding: 10px;
+}
+.listAdmin .listContainerAdmin .top .right form .formInput, .listAdmin .listContainerAdmin .bottom .right form .formInput {
+    width: 100%;
+}
+.listAdmin .listContainerAdmin .top .right form .formInput label, .listAdmin .listContainerAdmin .bottom .right form .formInput label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.listAdmin .listContainerAdmin .top .right form .formInput label .icon, .listAdmin .listContainerAdmin .bottom .right form .formInput label .icon {
+    cursor: pointer;
+}
+.listAdmin .listContainerAdmin .top .right form .formInput input, .listAdmin .listContainerAdmin .bottom .right form .formInput input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+    box-sizing: border-box;
+}
+.listAdmin .listContainerAdmin .top .right form button, .listAdmin .listContainerAdmin .bottom .right form button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}

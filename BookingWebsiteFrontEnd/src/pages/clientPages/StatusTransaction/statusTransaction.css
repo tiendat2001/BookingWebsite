@@ -1,0 +1,17 @@
+.statusTransactionContainer{
+    width: 100%;
+    max-width: 1024px;
+    /* gap: 10px; */
+    /* position: relative; */
+    margin: 10px auto
+}
+
+.statusTransactionContainer button{
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(1, 148, 243);
+    cursor: pointer;
+}
