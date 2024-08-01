@@ -19,7 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { jwtDecode } from "jwt-decode";
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import axios from 'axios';
 const currentDate = new Date();
 // để hiện tất cả reservations (khi người dùng chưa lọc theo ngày)
