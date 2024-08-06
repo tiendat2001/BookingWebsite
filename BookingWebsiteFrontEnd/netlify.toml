@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/hotels/*"
-  to = "https://bookingwebsite-vhgs.onrender.com/api/:splat"
+  from = "/hotels"
+  to = "https://bookingwebsite-vhgs.onrender.com/api/hotels"
   status = 200
   force = true
