@@ -1,11 +1,6 @@
 [[redirects]]
-  from = "/hotels"
-  to = "https://bookingwebsite-vhgs.onrender.com/api/hotels"
+  from = "/hotels/*"
+  to = "https://bookingwebsite-vhgs.onrender.com/api/hotels/:splat"
   status = 200
   force = true
 
-[[redirects]]
-  from = "/hotels/countByCity"
-  to = "https://bookingwebsite-vhgs.onrender.com/api/hotels/countByCity"
-  status = 200
-  force = true
