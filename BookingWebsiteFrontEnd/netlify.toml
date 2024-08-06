@@ -4,3 +4,8 @@
   status = 200
   force = true
 
+[[redirects]]
+  from = "/rooms/*"
+  to = "https://bookingwebsite-vhgs.onrender.com/api/rooms/:splat"
+  status = 200
+  force = true
