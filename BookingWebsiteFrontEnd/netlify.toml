@@ -9,3 +9,23 @@
   to = "https://bookingwebsite-vhgs.onrender.com/api/rooms/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/users/*"
+  to = "https://bookingwebsite-vhgs.onrender.com/api/users/:splat"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "/auth/*"
+  to = "https://bookingwebsite-vhgs.onrender.com/api/auth/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/reservation/*"
+  to = "https://bookingwebsite-vhgs.onrender.com/api/reservation/:splat"
+  status = 200
+  force = true
+
