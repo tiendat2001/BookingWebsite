@@ -17,6 +17,7 @@ import { toast } from 'react-toastify';
 import { useLocation } from "react-router-dom";
 const Reserve = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   // gồm id các phòng nhỏ
   const [selectedRooms, setSelectedRooms] = useState(location.state.selectedRoomIds);
   const [alldates, setAlldates] = useState(location.state.alldates);
@@ -115,7 +116,7 @@ const Reserve = () => {
         totalPrice: totalPrice * alldates.length,
         hotelId: hotelId,
         idOwnerHotel: hotelData.ownerId,
-        status: -1,
+        status: 1,
       });
       // lấy id của đơn đặt phòng vừa tạo
       reservationId = newReservation.data._id;
@@ -125,7 +126,7 @@ const Reserve = () => {
       return;
     }
 
-    toast.success('Đi đến trang thanh toán');
+    toast.success('Đặt phòng thành công');
 
     // chuyển hướng thanh toán VNPAY
     // try {
@@ -144,7 +145,7 @@ const Reserve = () => {
     //   console.error('Error creating payment:', error);
     //   // Xử lý lỗi nếu cần
     // }
-
+    navigate("/bookings",);
     setIsSending(false)
   }
 
