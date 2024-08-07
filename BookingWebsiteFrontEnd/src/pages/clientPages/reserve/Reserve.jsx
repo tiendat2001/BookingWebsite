@@ -17,6 +17,7 @@ import { toast } from 'react-toastify';
 import { useLocation } from "react-router-dom";
 const Reserve = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   // gồm id các phòng nhỏ
   const [selectedRooms, setSelectedRooms] = useState(location.state.selectedRoomIds);
   const [alldates, setAlldates] = useState(location.state.alldates);
@@ -144,7 +145,7 @@ const Reserve = () => {
     //   console.error('Error creating payment:', error);
     //   // Xử lý lỗi nếu cần
     // }
-
+    navigate("/bookings",);
     setIsSending(false)
   }
 

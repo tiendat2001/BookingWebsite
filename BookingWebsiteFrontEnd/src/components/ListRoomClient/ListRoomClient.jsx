@@ -182,7 +182,7 @@ const ListRoomClient = ({ hotelId, hotelType }) => {
   // hàm nút đặt phòng
   const reserveRoom = async () => {
     //check xem đăng nhập chưa
-    if (!user.username) {
+    if (!user?.username) {
       navigate("/login")
       return;
     }
