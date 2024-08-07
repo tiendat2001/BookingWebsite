@@ -1,30 +1,30 @@
 [[redirects]]
-  from = "api/hotels/*"
+  from = "/hotels/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/hotels/:splat"
   status = 200
   force = true
 
 [[redirects]]
-  from = "api/rooms/*"
+  from = "/rooms/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/rooms/:splat"
   status = 200
   force = true
 
 [[redirects]]
-  from = "api/users/*"
+  from = "/users/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/users/:splat"
   status = 200
   force = true
 
 
 [[redirects]]
-  from = "api/auth/*"
+  from = "/auth/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/auth/:splat"
   status = 200
   force = true
 
 [[redirects]]
-  from = "api/reservation/*"
+  from = "/reservation/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/reservation/:splat"
   status = 200
   force = true

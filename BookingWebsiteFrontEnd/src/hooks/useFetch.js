@@ -9,7 +9,7 @@ const useFetch = (url) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`/api${url}`);
+        const res = await axios.get(url);
         setData(res.data);
       } catch (err) {
         if (err.response && err.response.status === 401) {
@@ -28,7 +28,7 @@ const useFetch = (url) => {
   const reFetch = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`/api${url}`);
+      const res = await axios.get(url);
       setData(res.data);
     } catch (err) {
       setError(err);
