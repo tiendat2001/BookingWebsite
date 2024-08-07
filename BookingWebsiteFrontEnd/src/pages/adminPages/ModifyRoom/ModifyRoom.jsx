@@ -68,7 +68,7 @@ const ModifyRoom = () => {
           const data = new FormData();
           data.append("file", file);
           const uploadRes = await axios.post(
-            `/closedRoom/upload/uploadImage`,
+            `/api/closedRoom/upload/uploadImage`,
             data
           );
 

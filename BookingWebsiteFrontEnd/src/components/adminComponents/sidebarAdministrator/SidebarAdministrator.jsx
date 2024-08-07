@@ -20,7 +20,7 @@ const SidebarAdministrator = () => {
   const handleLogOut = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/auth/logout");
+      const res = await axios.post("/api/auth/logout");
       dispatch({ type: "LOGOUT"});
       navigate("/login");
     } catch (err) {}

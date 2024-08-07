@@ -104,7 +104,7 @@ const Reserve = () => {
     // tạo order
     let reservationId = ""
     try {
-      const newReservation = await axios.post(`/reservation`, {
+      const newReservation = await axios.post(`/api/reservation`, {
         phoneNumber: phoneNumber,
         start: startDate,
         end: endDate,
@@ -128,22 +128,22 @@ const Reserve = () => {
     toast.success('Đi đến trang thanh toán');
 
     // chuyển hướng thanh toán VNPAY
-    try {
-      const response = await axios.post('/payment/create_payment_url', {
-        reservationId: reservationId,
-        amount: totalPrice * alldates.length * 1000,
-        paymentType: paymentType
-      });
-      let paymentUrl = response.data; // Giả sử API trả về link thanh toán trong trường 'paymentUrl'
-      const startIndex = paymentUrl.indexOf('https://');
-      // Cắt bỏ phần URL trước "https://" và lấy phần sau
-      paymentUrl = paymentUrl.substring(startIndex);
-      // chuyển hướng link thanh toán
-      window.location.href = paymentUrl;
-    } catch (error) {
-      console.error('Error creating payment:', error);
-      // Xử lý lỗi nếu cần
-    }
+    // try {
+    //   const response = await axios.post('/api/payment/create_payment_url', {
+    //     reservationId: reservationId,
+    //     amount: totalPrice * alldates.length * 1000,
+    //     paymentType: paymentType
+    //   });
+    //   let paymentUrl = response.data; // Giả sử API trả về link thanh toán trong trường 'paymentUrl'
+    //   const startIndex = paymentUrl.indexOf('https://');
+    //   // Cắt bỏ phần URL trước "https://" và lấy phần sau
+    //   paymentUrl = paymentUrl.substring(startIndex);
+    //   // chuyển hướng link thanh toán
+    //   window.location.href = paymentUrl;
+    // } catch (error) {
+    //   console.error('Error creating payment:', error);
+    //   // Xử lý lỗi nếu cần
+    // }
 
     setIsSending(false)
   }

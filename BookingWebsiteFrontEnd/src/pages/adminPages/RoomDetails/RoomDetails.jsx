@@ -141,7 +141,7 @@ const RoomDetails = () => {
 
         // tạo lịch sử đóng phòng
         try {
-            const upload = await axios.post(`/closedRoom/createCloseRoom/${idRoom}`, {
+            const upload = await axios.post(`/api/closedRoom/createCloseRoom/${idRoom}`, {
                 // ownerId: decodedToken.id,
                 roomTypeId: idRoom,
                 startClose: dates[0].startDate,

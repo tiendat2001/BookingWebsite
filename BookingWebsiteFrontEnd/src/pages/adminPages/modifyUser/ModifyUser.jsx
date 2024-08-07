@@ -22,7 +22,7 @@ const ModifyUser = ({ modify }) => {
             return;
           }
           try{
-            const res = await axios.post("/auth/changePassword", credentials);
+            const res = await axios.post("/api/auth/changePassword", credentials);
             if(res.status===200){
                 toast.success("Đổi mật khẩu thành công")
             } 

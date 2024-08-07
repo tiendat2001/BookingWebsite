@@ -98,7 +98,7 @@ const NewHotel = () => {
             const data = new FormData();
             data.append("file", file);
             const uploadRes = await axios.post(
-              `/closedRoom/upload/uploadImage`,
+              `/api/closedRoom/upload/uploadImage`,
               data
             );
 
@@ -114,7 +114,7 @@ const NewHotel = () => {
           // ownerId: decodedToken.id
         };
 
-        const Success = await axios.post("/hotels", newhotel);
+        const Success = await axios.post("/api/hotels", newhotel);
         if (Success) {
           toast.success('Thành công!');
           toast.warning(`Vẫn chưa xong! Hãy tiếp tục thêm chi tiết về loại phòng ở chỗ nghỉ của bạn ở mục "Phòng". Chỗ nghỉ

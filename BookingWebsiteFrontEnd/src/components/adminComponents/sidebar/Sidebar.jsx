@@ -35,7 +35,7 @@ const Sidebar = () => {
     e.preventDefault();
     try {
       dispatch({ type: "LOGOUT" });
-      const res = await axios.post("/auth/logout");
+      const res = await axios.post("/api/auth/logout");
       navigate("/login");
     } catch (err) { }
   };

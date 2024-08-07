@@ -30,7 +30,7 @@ const Register = () => {
     }
     try {
 
-      const res = await axios.post("/auth/register", credentials);
+      const res = await axios.post("/api/auth/register", credentials);
       alert("Đăng ký thành công")
       navigate("/login")
     } catch (err) {

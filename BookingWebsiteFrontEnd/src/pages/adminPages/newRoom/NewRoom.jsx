@@ -81,7 +81,7 @@ const NewRoom = () => {
                     const data = new FormData();
                     data.append("file", file);
                     const uploadRes = await axios.post(
-                        `/closedRoom/upload/uploadImage`,
+                        `/api/closedRoom/upload/uploadImage`,
                         data
                     );
 
@@ -103,7 +103,7 @@ const NewRoom = () => {
 
                 // console.log(newRoom)
 
-                const Success = await axios.post(`/rooms/${hotelId}`, newRoom);
+                const Success = await axios.post(`/api/rooms/${hotelId}`, newRoom);
                 if (Success) {
                     toast.success('Thành công!');
                     navigate(`/admin/rooms`, { state: { hotelIdFromAddModifyRoom: hotelId } });

@@ -33,7 +33,7 @@ const Navbar = () => {
   };
   const handleLogout = async () => {
 
-    const res = await axios.post("/auth/logout");
+    const res = await axios.post("/api/auth/logout");
     navigate("/login");
     dispatch({ type: "LOGOUT" });
 
