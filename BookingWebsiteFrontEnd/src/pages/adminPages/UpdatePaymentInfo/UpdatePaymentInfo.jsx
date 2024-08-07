@@ -17,7 +17,7 @@ const UpdatePaymentInfo = () => {
 
   const submitChange = async (e) => {
     e.preventDefault();
-    const Success = await axios.put(`/users`, info);
+    const Success = await axios.put(`/api/users`, info);
     if (Success) {
       toast.success('Thành công chỉnh sửa!');
     } else {

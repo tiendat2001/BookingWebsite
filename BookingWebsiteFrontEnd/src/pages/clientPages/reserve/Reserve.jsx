@@ -88,7 +88,7 @@ const Reserve = () => {
     // Đẩy available
     try {
      
-      const res = await axios.put(`/rooms/availability/`, {
+      const res = await axios.put(`/api/rooms/availability/`, {
         roomTypeIdsReserved:roomTypeIdsReserved,
         dates: alldates,
         startDateRange: startDate,

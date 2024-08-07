@@ -87,7 +87,7 @@ const ModifyRoom = () => {
         // ownerId: decodedToken.id    // _id của tài khoản người dùng
       };
 
-      const Success = await axios.put(`/rooms/${idRoom}`, newModifyRoom);
+      const Success = await axios.put(`/api/rooms/${idRoom}`, newModifyRoom);
       if (Success) {
         setIsSending(false)
         toast.success('Thành công chỉnh sửa!');

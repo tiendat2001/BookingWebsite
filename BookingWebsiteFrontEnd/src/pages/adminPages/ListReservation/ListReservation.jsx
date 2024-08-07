@@ -91,7 +91,7 @@ const ListReservation = () => {
         try {
             // chỉnh lại reservation này là do admin yêu cầu hủy
             try {
-                await axios.put(`/reservation/${selectedCancelReservation._id}`, {
+                await axios.put(`/api/reservation/${selectedCancelReservation._id}`, {
                     cancelDetails: {
                         isAdminCancel: true
                     }
@@ -104,7 +104,7 @@ const ListReservation = () => {
 
             // gửi email xác nhận cho khách về yêu cầu hủy của admin
             // try {
-            //     const res = await axios.put(`/reservation/email/sendEmailStatusReservation`, {
+            //     const res = await axios.put(`/api/reservation/email/sendEmailStatusReservation`, {
             //         userId: selectedCancelReservation.userId, // gửi cho email của account khách - userId khách
             //         emailSubject: "THÔNG BÁO YÊU CẦU HỦY ĐƠN ĐẶT PHÒNG TỪ CHỦ CHỖ NGHỈ ",
             //         emailContent: `Đơn đặt phòng mã ${selectedCancelReservation._id} của quý khách được chủ chỗ nghỉ yêu cầu hủy \n Lý do hủy: ${reasonCancel} \n Chi tiết xem tại trang web phần Đơn đặt phòng `

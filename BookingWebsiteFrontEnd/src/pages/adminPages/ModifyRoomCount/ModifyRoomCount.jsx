@@ -37,7 +37,7 @@ const ModifyRoomCount = () => {
 
             }
             
-            const res = await axios.put(`/rooms/changeStatusRoomInRoomType/${roomId}`)
+            const res = await axios.put(`/api/rooms/changeStatusRoomInRoomType/${roomId}`)
 
             if (res.status === 200) {
                 toast.success("Chỉnh thành công") // In ra thông báo nếu thành công
@@ -78,7 +78,7 @@ const ModifyRoomCount = () => {
     // hàm submit
     const submitAddRoom = async (event) => {
         try {
-            const res = await axios.put(`/rooms/addRoomToRoomType/${idRoom}`, {
+            const res = await axios.put(`/api/rooms/addRoomToRoomType/${idRoom}`, {
                 roomCountToAdd: roomCountToAdd
             });
             if (res.status === 200) {
@@ -94,7 +94,7 @@ const ModifyRoomCount = () => {
 
     const submitDeleteRoom = async (event) => {
         try {
-            const res = await axios.put(`/rooms/deleteRoomInRoomType/${idRoom}`, {
+            const res = await axios.put(`/api/rooms/deleteRoomInRoomType/${idRoom}`, {
                 roomCountToDelete: roomCountToDelete
             });
 

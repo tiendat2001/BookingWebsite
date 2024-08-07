@@ -66,7 +66,7 @@ const ListBooking = () => {
       for (const roomTypeId of selectedReservation.roomTypeIdsReserved) {
         for (var i = 0; i < roomTypeId.quantity; i++) {
           try {
-            const res = await axios.put(`/rooms/cancelAvailability/${roomTypeId.roomTypeId}`, {
+            const res = await axios.put(`/api/rooms/cancelAvailability/${roomTypeId.roomTypeId}`, {
               dates: selectedReservation.allDatesReserve,
               unavailableRangeDates: {
                 startDateRange: selectedReservation.start,
@@ -85,7 +85,7 @@ const ListBooking = () => {
 
       // chỉnh lại trạng thái reservation
       try {
-        await axios.put(`/reservation/${selectedReservation._id}`, {
+        await axios.put(`/api/reservation/${selectedReservation._id}`, {
           status: 0,
           cancelDetails:{
             // giữ nguyên isAdminCancel, update phí hủy theo trường hợp
@@ -102,7 +102,7 @@ const ListBooking = () => {
       // // gửi email xác nhận đã hủy phòng thành công
       let emailSubject = "THÔNG BÁO HỦY PHÒNG THÀNH CÔNG"
       // try {
-      //   const res = await axios.put(`/reservation/email/sendEmailStatusReservation`, {
+      //   const res = await axios.put(`/api/reservation/email/sendEmailStatusReservation`, {
       //     userId:selectedReservation.userId,
       //     emailSubject:"THÔNG BÁO HỦY PHÒNG THÀNH CÔNG",
       //     emailContent:`Đơn đặt phòng mã ${selectedReservation._id} của quý khách đã được hủy thành công.\n Chi tiết đơn đặt xem tại trên website`

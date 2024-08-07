@@ -71,7 +71,7 @@ const ListHotel = () => {
         try {
             // Gửi yêu cầu xóa khách sạn đến máy chủ
 
-            const Success = await axios.delete(`/hotels/${hotelId}`);
+            const Success = await axios.delete(`/api/hotels/${hotelId}`);
 
             if (Success) {
                 // Nếu xóa thành công, tải lại dữ liệu

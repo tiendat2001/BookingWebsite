@@ -126,7 +126,7 @@ const RoomDetails = () => {
                 toast.error("Số lượng phòng muốn đóng phải lớn hơn 0")
                 return;
             }
-            const res = await axios.put(`/rooms/availability/`, {
+            const res = await axios.put(`/api/rooms/availability/`, {
                 roomTypeIdsReserved: [{ roomTypeId: idRoom, quantity: parseInt(roomQuantityToClose, 10) }], // chuyển về dạng số
                 dates: alldates,
                 startDateRange: dates[0].startDate,
@@ -190,7 +190,7 @@ const RoomDetails = () => {
             // gọi API bằng số lượng quantity của typeRoom đó
             for (var i = 0; i < quantityRoomClosed; i++) {
                 try {
-                    const res = await axios.put(`/rooms/cancelAvailability/${roomTypeData._id}`, {
+                    const res = await axios.put(`/api/rooms/cancelAvailability/${roomTypeData._id}`, {
                         dates: allDatesClose,
                         unavailableRangeDates: {
                             startDateRange: startDateClose,
@@ -206,7 +206,7 @@ const RoomDetails = () => {
 
             // xóa lịch sử closeRoom
             try {
-                const Success = await axios.delete(`/closedRoom/${roomCloseId}`);
+                const Success = await axios.delete(`/api/closedRoom/${roomCloseId}`);
                 roomCloseDataReFetch()
                 roomTypeDataReFetch()
                 reFetchRoomCountStatus()

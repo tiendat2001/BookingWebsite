@@ -129,7 +129,7 @@ const ModifyHotel = () => {
                 };
 
                 // gọi api thay đổi
-                const Success = await axios.put(`/hotels/${idHotel}`, newModifyHotel);
+                const Success = await axios.put(`/api/hotels/${idHotel}`, newModifyHotel);
                 if (Success) {
                     setIsSending(false)
                     toast.success('Thành công chỉnh sửa!');

@@ -91,7 +91,7 @@ const ListRoom = () => {
     const deleteRoom = async (typeRoomId) => {
 
         try {
-            const Success = await axios.delete(`/rooms/${typeRoomId}`);
+            const Success = await axios.delete(`/api/rooms/${typeRoomId}`);
 
             if (Success) {
                 // Nếu xóa thành công, tải lại dữ liệu
@@ -117,7 +117,7 @@ const ListRoom = () => {
                     onClick: async () => {
                         // Xác nhận xóa phòng
                         try {
-                            const Success = await axios.put(`/rooms/${roomTypeId}`, {
+                            const Success = await axios.put(`/api/rooms/${roomTypeId}`, {
                                 status: !currentStatus
                             });
                             // Nếu thành công, tải lại dữ liệu

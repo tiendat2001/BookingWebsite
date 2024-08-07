@@ -30,6 +30,12 @@
   force = true
 
 [[redirects]]
+  from = "api/closedRoom/*"
+  to = "https://bookingwebsite-vhgs.onrender.com/api/closedRoom/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/"
   status = 200
