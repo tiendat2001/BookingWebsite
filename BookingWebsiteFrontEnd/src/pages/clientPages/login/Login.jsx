@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
 import "./login.css";
 
 const Login = () => {
@@ -35,6 +36,7 @@ const Login = () => {
       } else navigate(-1)
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+      toast.error('Có lỗi xảy ra vui lòng thử lại sau');
     }
   };
 
