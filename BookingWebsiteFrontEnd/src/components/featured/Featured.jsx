@@ -32,7 +32,7 @@ const Featured = () => {
   return (
     <div className="featured">
       {loading ? (
-        "Loading please wait"
+        "Đang tải"
       ) : (
         // dấu <> thay cho react fragment - = với việc tạo 1 div lồng ra ngoài
         <> 

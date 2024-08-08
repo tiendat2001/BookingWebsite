@@ -70,7 +70,7 @@ const RecentSeenHotel = () => {
     <div className="recentHotelContainer">
       <h1 style={{fontSize:'20px', }}>Các chỗ nghỉ ở {mostViewedCity}</h1>
       {loading || !mostViewedCity ? (
-        "Loading"
+        "Đang tải"
       ) : (
         <div className="fp">
           {limitedSuggestedHotels

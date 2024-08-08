@@ -346,7 +346,7 @@ const List = () => {
             </div>
 
             {loading ? (
-              "loading"
+              "Đang tải"
             ) : (
               <>
 
