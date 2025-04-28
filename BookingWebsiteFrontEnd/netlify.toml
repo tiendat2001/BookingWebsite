@@ -3,39 +3,45 @@
   to = "https://bookingwebsite-vhgs.onrender.com/api/hotels/:splat"
   status = 200
   force = true
+  condition = { env = "production" }
 
 [[redirects]]
   from = "api/rooms/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/rooms/:splat"
   status = 200
   force = true
+  condition = { env = "production" }
 
 [[redirects]]
   from = "api/users/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/users/:splat"
   status = 200
   force = true
-
+  condition = { env = "production" }
 
 [[redirects]]
   from = "api/auth/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/auth/:splat"
   status = 200
   force = true
+  condition = { env = "production" }
 
 [[redirects]]
   from = "api/reservation/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/reservation/:splat"
   status = 200
   force = true
+  condition = { env = "production" }
 
 [[redirects]]
   from = "api/closedRoom/*"
   to = "https://bookingwebsite-vhgs.onrender.com/api/closedRoom/:splat"
   status = 200
   force = true
+  condition = { env = "production" }
 
 [[redirects]]
   from = "/*"
   to = "/"
   status = 200
+  condition = { env = "production" }
