@@ -10,6 +10,8 @@ import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 import paymentRoute from "./routes/payment.js"
+import rabbitMQRoute from "./routes/rabbitmq.js"
+import amqp from "amqplib"  // Import amqplib để kết nối RabbitMQ
 
 
 const app = express()
@@ -28,6 +30,24 @@ const connect = async () => {
 mongoose.connection.on("disconnected", () => {
     console.log("mongoDB disconnected!")
 })
+
+// kết nối rabbitMQ
+let channel, connection;
+export { channel };
+const connectRabbitMQ = async () => {
+    try {
+        connection = await amqp.connect(process.env.RABBITMQ_URL || "amqp://localhost");
+        channel = await connection.createChannel();
+        const queue = 'task_queue'; // Tên của queue
+        await channel.assertQueue(queue, {
+            durable: true, // Đảm bảo queue tồn tại sau khi RabbitMQ khởi động lại
+        });
+        console.log("Connected to RabbitMQ.");
+    } catch (error) {
+        console.error("Failed to connect to RabbitMQ:", error);
+        process.exit(1); // Dừng ứng dụng nếu không kết nối được RabbitMQ
+    }
+};
 
 // middleware
 app.use(cors())
@@ -52,6 +72,7 @@ app.use("/api/rooms", roomsRoute)
 app.use("/api/reservation", reservationRoute)
 app.use("/api/closedRoom", closedRoomRoute)
 app.use("/api/payment", paymentRoute)
+app.use("/api/rabbitmq", rabbitMQRoute)
 
 
 
@@ -67,6 +88,7 @@ app.use((err,req,res,next)=>{
 });
 app.listen(8800, () => {
     connect()
+    connectRabbitMQ()
     console.log("Connected to backend..")
 });
 

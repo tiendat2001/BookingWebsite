@@ -5,12 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "startlc": "nodemon index.js"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "amqplib": "^0.10.7",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.11",
