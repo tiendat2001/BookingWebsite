@@ -52,7 +52,7 @@ function App() {
     useEffect(() => {
       const checkAccessToken = async () => {
         try {
-          const response = await fetch('api/auth/checkHasAccessToken');
+          const response = await axios.get("/api/auth/checkHasAccessToken");
           if (response.status === 200) {
             setIsLoggedIn(true);
           }
@@ -90,7 +90,7 @@ function App() {
     useEffect(() => {
       const checkAccessToken = async () => {
         try {
-          const response = await fetch('api/auth/checkHasAccessTokenAdministrator');
+          const response = await axios.get("/api/auth/checkHasAccessTokenAdministrator");
           if (response.status === 200) {
             setIsLoggedIn(true);
           }
