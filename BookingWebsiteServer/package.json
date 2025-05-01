@@ -7,7 +7,6 @@
   "scripts": {
     "start": "node index.js",
     "startlc": "nodemon index.js"
-
   },
   "keywords": [],
   "author": "",
@@ -32,6 +31,7 @@
     "nodemailer": "^6.9.13",
     "nodemon": "^3.0.1",
     "qs": "^6.12.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "socket.io": "^4.8.1"
   }
 }
