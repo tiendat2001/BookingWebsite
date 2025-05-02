@@ -10,7 +10,7 @@ import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 import paymentRoute from "./routes/payment.js"
-import rabbitMQRoute from "./routes/rabbitmq.js"
+import notificationRoute from "./routes/notification.js"
 import amqp from "amqplib"  // Import amqplib để kết nối RabbitMQ
 import { Server } from "socket.io";
 import http from "http";
@@ -27,6 +27,7 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+export { io };
 
 // Socket.IO connection
 io.on("connection", (socket) => {
@@ -92,7 +93,7 @@ app.use("/api/rooms", roomsRoute)
 app.use("/api/reservation", reservationRoute)
 app.use("/api/closedRoom", closedRoomRoute)
 app.use("/api/payment", paymentRoute)
-app.use("/api/rabbitmq", rabbitMQRoute)
+app.use("/api/notification", notificationRoute)
 
 
 
@@ -106,7 +107,7 @@ app.use((err,req,res,next)=>{
         stack: err.stack,
     });
 });
-app.listen(8800, () => {
+server.listen(8800, () => {
     connect()
     connectRabbitMQ()
     console.log("Connected to backend..")

@@ -1,6 +1,9 @@
 import express from "express"
-import {channel} from "../index.js"
+import {channel, io} from "../index.js"
 import { createError } from "../utils/error.js";
+import { verifyAdmin,verifyUserModifyHotel,verifyToken } from "../utils/verifyToken.js";
+import User from "../models/User.js"
+
 const router = express.Router()
 
 router.post("/send-message", async (req, res, next) => {
@@ -29,4 +32,31 @@ router.post("/send-message", async (req, res, next) => {
     return next(createError(500, "Failed to send message to RabbitMQ"));
   }
 });
+
+router.post("/notify", async (req, res, next) => {
+  io.to(req.body.socketId).emit("notification", req.body.message);
+  res.status(200).json({ success: true, message: "Notification sent!" });
+});
+
+router.post("/connect-socket",verifyToken, async (req, res, next) => {
+  try {
+    const { socketId } = req.body;
+
+    if (!socketId) {
+        return res.status(400).json({ message: "socketId is required" });
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+        req.user.id,
+        { socketId: socketId }, // Chỉ cập nhật socketId
+        { new: true }
+    );
+
+    res.status(200).json(socketId);
+} catch (err) {
+    next(err);
+}
+});
+
+
 export default router
