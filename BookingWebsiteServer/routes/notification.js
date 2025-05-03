@@ -34,7 +34,11 @@ router.post("/send-message", async (req, res, next) => {
 });
 
 router.post("/notify", async (req, res, next) => {
-  io.to(req.body.socketId).emit("notification", req.body.message);
+  const ownerHotel = await User.findById(
+    req.body.idOwnerHotel
+  );
+  console.log(ownerHotel.socketId)
+  io.to(ownerHotel.socketId.toString()).emit("notification", req.body.message);
   res.status(200).json({ success: true, message: "Notification sent!" });
 });
 

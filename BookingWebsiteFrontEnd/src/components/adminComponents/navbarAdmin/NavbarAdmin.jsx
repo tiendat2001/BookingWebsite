@@ -21,7 +21,7 @@ const NavbarAdmin = () => {
     });
 
     socketRef.current.on("notification", (data) => {
-      toast.success("📢 Thông báo mới: " + data);
+      toast.info("📢 " + data);
     });
 
     return () => {
