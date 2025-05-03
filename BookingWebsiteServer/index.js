@@ -23,7 +23,7 @@ const app = express()
 const server = http.createServer(app); // Socket cần HTTP server
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", // frontend
+    origin: "*", // frontend
     methods: ["GET", "POST"],
   },
 });
