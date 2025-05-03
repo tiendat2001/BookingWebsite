@@ -6,13 +6,19 @@ import { startOfMonth, endOfMonth, subMonths, addHours, subHours } from 'date-fn
 import { startOfToday } from "date-fns";
 import nodemailer from "nodemailer"
 import mongoose from 'mongoose';
-
+import {channel, io} from "../index.js"
 export const createReservation = async (req, res, next) => {
     req.body.userId = req.user.id;
     const newReservation = new Reservation(req.body)
     try {
         const savedReservation = await newReservation.save()
         res.status(200).json(savedReservation)
+
+        // gửi thông báo real time tới chủ chỗ nghỉ
+        const ownerHotel = await User.findById(
+            req.body.idOwnerHotel
+        );
+        io.to(ownerHotel.socketId.toString()).emit("notification", "Bạn có 1 đơn đặt phòng mới");
     } catch (err) {
         next(err)
     }
