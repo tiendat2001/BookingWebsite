@@ -40,6 +40,13 @@
   force = true
   condition = { env = "production" }
 
+  [[redirects]]
+  from = "api/notification/*"
+  to = "https://bookingwebsite-vhgs.onrender.com/api/notification/:splat"
+  status = 200
+  force = true
+  condition = { env = "production" }
+
 [[redirects]]
   from = "/*"
   to = "/"
