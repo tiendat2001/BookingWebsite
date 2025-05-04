@@ -12,7 +12,7 @@ const NavbarAdmin = () => {
   const socketRef = useRef(null);
 
   useEffect(() => {
-    socketRef.current = io("https://bookingwebsite-vhgs.onrender.com");
+    socketRef.current = io(process.env.SOCKET_URL);
 
     socketRef.current.on("connect", () => {
       axios.post("/api/notification/connect-socket", {
