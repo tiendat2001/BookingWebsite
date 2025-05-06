@@ -1,3 +1,4 @@
+// page danh sách đơn đặt phòng 
 import React from 'react'
 import "./listBooking.css"
 import Navbar from '../../../components/navbar/Navbar'
@@ -16,20 +17,20 @@ const ListBooking = () => {
   const { data, loading, error, reFetch } = useFetch(
     `/reservation/client`
   );
-  const [isSending,setIsSending] = useState(false)
+  const [isSending, setIsSending] = useState(false)
 
   const handleCancelReserve = async (selectedReservation) => {
     let message = ""
-    let cancelFee =0;
+    let cancelFee = 0;
     // hủy trong khoảng time 3 ngày trc ngày nhận phòng và ko trong khoảng 24h sau thời gian đặt 
     // và ko phải là yêu cầu hủy từ admin thì bị coi là muộn - tính phí đêm đầu
-    const isLateCancel = (new Date() > subHours(new Date(selectedReservation.start), 24 * 3)) &&  !selectedReservation.cancelDetails.isAdminCancel
+    const isLateCancel = (new Date() > subHours(new Date(selectedReservation.start), 24 * 3)) && !selectedReservation.cancelDetails.isAdminCancel
       && (new Date() > addHours(new Date(selectedReservation.createdAt), 24))
 
     if (isLateCancel) {
       cancelFee = selectedReservation.totalPrice / selectedReservation.allDatesReserve.length
       message = `Bạn có chắc chắn muốn hủy đơn đặt phòng này? Bạn không thể hoàn tác sau khi hủy. Bạn mất phí hủy 
-      (phí đêm đầu- ${new Intl.NumberFormat('vi-VN').format(cancelFee* 1000)} VND)
+      (phí đêm đầu- ${new Intl.NumberFormat('vi-VN').format(cancelFee * 1000)} VND)
        nếu hủy đơn đặt này.`
     } else message = "Bạn có chắc chắn muốn hủy đơn đặt phòng này? Bạn không thể hoàn tác sau khi hủy. Bạn sẽ không mất phí hủy nếu hủy đơn đặt này"
 
@@ -40,7 +41,7 @@ const ListBooking = () => {
         {
           label: 'Yes',
           onClick: () => {
-            deleteAvailability(cancelFee,selectedReservation);
+            deleteAvailability(cancelFee, selectedReservation);
           }
         },
         {
@@ -56,7 +57,7 @@ const ListBooking = () => {
   }
 
   // bỏ unavailabledates trong mỗi phòng đặt
-  const deleteAvailability = async (cancelFee,selectedReservation) => {
+  const deleteAvailability = async (cancelFee, selectedReservation) => {
     setIsSending(true)
     let hasError = false;
     // console.log(roomNumbersId)
@@ -87,11 +88,11 @@ const ListBooking = () => {
       try {
         await axios.put(`/api/reservation/${selectedReservation._id}`, {
           status: 0,
-          cancelDetails:{
+          cancelDetails: {
             // giữ nguyên isAdminCancel, update phí hủy theo trường hợp
-            isAdminCancel:selectedReservation.cancelDetails.isAdminCancel,
-            cancelFee:cancelFee
-        }
+            isAdminCancel: selectedReservation.cancelDetails.isAdminCancel,
+            cancelFee: cancelFee
+          }
         })
       } catch (err) {
         hasError = true;
@@ -157,11 +158,11 @@ const ListBooking = () => {
                   Tình trạng: {item.status === 1 ? "Thành công" : item.status === 0 ? "Hủy" : "Đang chờ"}
                 </div>
                 {/* xem có yêu cầu hủy từ chủ chỗ nghỉ ko */}
-                {item.status ===1 && item.cancelDetails.isAdminCancel ? 
-                (
-                  <div style={{ fontWeight: 'bold',color:'red',fontStyle:'italic' }}>(Đơn này đang được yêu cầu hủy từ chủ chỗ nghỉ. <br/>
-                   Đặt phòng này vẫn sẽ có hiệu lực cho đến khi bạn hủy. <br/>Bạn sẽ không mất phí hủy nếu hủy đơn này)</div>
-                ):''}
+                {item.status === 1 && item.cancelDetails.isAdminCancel ?
+                  (
+                    <div style={{ fontWeight: 'bold', color: 'red', fontStyle: 'italic' }}>(Đơn này đang được yêu cầu hủy từ chủ chỗ nghỉ. <br />
+                      Đặt phòng này vẫn sẽ có hiệu lực cho đến khi bạn hủy. <br />Bạn sẽ không mất phí hủy nếu hủy đơn này)</div>
+                  ) : ''}
                 <div>Thông tin liên lạc chỗ nghỉ: {item.hotelContact}</div>
 
 
@@ -170,15 +171,19 @@ const ListBooking = () => {
 
               <div style={{ width: '25%', display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                 <button className="cancel_booking" onClick={() => handleCancelReserve(item)}
-                  disabled={new Date() > new Date(item.start) || item.status ==0}>
+                  disabled={new Date() > new Date(item.start) || item.status == 0}>
                   {/* disabled={ new Date() > new Date(item.start) || !item.status}> */}
 
-                    {isSending ? 'Đang xử lý' : 'Hủy đặt phòng' }</button> <br />
+                  {isSending ? 'Đang xử lý' : 'Hủy đặt phòng'}</button> <br />
 
                 {/* <button className="cancel_booking" onClick={() => handleCancelReserve(item.allDatesReserve, item.roomNumbersId, item._id, item.start, item.end, item.roomTypeIdsReserved)}
                 >Hủy đặt phòng</button>  */}
                 <br />
-                <div style={{ textAlign: 'right' }}>(Bạn sẽ được miễn phí hủy nếu hủy trong 24h kể từ lúc đặt hoặc trước thời gian nhận phòng 3 ngày (trước {subHours(new Date(item.start), 24 * 3).toLocaleString('vi-VN')}))</div>
+                {!(new Date() > new Date(item.start) || item.status == 0) && (
+                  <div style={{ textAlign: 'right' }}>
+                    (Bạn sẽ được miễn phí hủy nếu hủy trong 24h kể từ lúc đặt hoặc trước thời gian nhận phòng 3 ngày (trước {subHours(new Date(item.start), 24 * 3).toLocaleString('vi-VN')}))
+                  </div>
+                )}
               </div>
 
             </div>
@@ -188,7 +193,6 @@ const ListBooking = () => {
 
       </div>
 
-      {/* <Footer /> */}
     </div>
   )
 }
